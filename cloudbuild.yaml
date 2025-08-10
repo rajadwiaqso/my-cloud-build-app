@@ -1,11 +1,11 @@
-# File: cloudbuild.yaml
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  args:
-    - 'app'
-    - 'deploy'
-    - '--project=probable-goody-434918-u8'
-  id: Deploy to App Engine
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy', 'app.yaml', '--quiet']
 
-options:
-  logging: CLOUD_LOGGING_ONLY
+# Optional: Set the project ID if not using the default
+# options:
+#   substitution_option: 'ALLOW_LOOSE'
+#   env:
+#     - 'CLOUDSDK_CORE_PROJECT=your-gcp-project-id'
+
+images: []
