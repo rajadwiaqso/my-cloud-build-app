@@ -1,11 +1,11 @@
 # File: cloudbuild.yaml
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['app', 'deploy', '--project=${_PROJECT_ID}']
-    id: Deploy to App Engine
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+    - 'app'
+    - 'deploy'
+    - '--project=probable-goody-434918-u8'
+  id: Deploy to App Engine
 
 options:
   logging: CLOUD_LOGGING_ONLY
-
-substitutions:
-  _PROJECT_ID: 'probable-goody-434918-u8'
