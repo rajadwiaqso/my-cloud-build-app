@@ -2,10 +2,8 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', 'app.yaml', '--quiet']
 
-# Optional: Set the project ID if not using the default
-# options:
-#   substitution_option: 'ALLOW_LOOSE'
-#   env:
-#     - 'CLOUDSDK_CORE_PROJECT=your-gcp-project-id'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
 
 images: []
