@@ -1,6 +1,17 @@
+# File: cloudbuild.yaml
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'app'
+      - 'deploy'
+      - '--project=${_PROJECT_ID}'
+      - '--service_account=${_SERVICE_ACCOUNT}'
+      - '--version=${_BUILD_ID}'
+    id: Deploy to App Engine
 
 options:
   logging: CLOUD_LOGGING_ONLY
+
+substitutions:
+  _PROJECT_ID: 'arctic-robot-435015-n6'
+  _SERVICE_ACCOUNT: 'server-raja@arctic-robot-435015-n6.iam.gserviceaccount.com'
